@@ -10,7 +10,7 @@ import Footer from './Components/Footer';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+//dffd
   // Method to handle login
   const handleLogin = () => {
     setIsAuthenticated(true);
