@@ -1,5 +1,5 @@
 import React from "react";
-import {  useNavigate } from "react-router-dom";
+import {  Navigate,useLocation, useNavigate } from "react-router-dom";
 import './Auth.css';
 import Footer from "./Footer";
 
@@ -8,9 +8,13 @@ function FirstPage(){
 
     const navigate = useNavigate("./signIn");
 
+
+    const location = useLocation();
+//   const navigate = useNavigate();
+  const email = location.state?.email;
+
     return(
         <div className="first">
-            <main>
             <ul>
         <li>Help</li>
         <li>Policy</li>
@@ -22,8 +26,9 @@ function FirstPage(){
 <h1>Food Zone</h1>
 <h3>Fresh and DELICIOUS fOOD</h3>
 <button className="fpg_btn" onClick={() => navigate("/SignIn")}>View Menu</button>
-</div></main>
-{/* <Footer/> */}
+</div>
+{/* <div className="ft"><Footer/></div> */}
+<Footer/>
         </div>
     );
 }

@@ -1,19 +1,32 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate,useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { auth } from "./Firebase";
+import { signOut } from "firebase/auth";
 
-const Home =() => {
+const Home = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const email = location.state?.email;
+
+  const handleSignout = async () => {
+    try {
+      await signOut(auth);
+      navigate("./SignIn"); 
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   return (
-    <div className="about-us">
+    <div className="about-us" id="obst">
       <Navbar />
-      <h2 className="abt">This is our home page</h2>
-      <p className="abt">
-        i will do
-      </p>
-      <Footer/>
+      <h2 className="abt">Hi {email ? email : "user"} welcome here!</h2>
+      <button onClick={handleSignout}>Sign Out</button>
+      <Footer />
     </div>
   );
-}
+};
 
 export default Home;

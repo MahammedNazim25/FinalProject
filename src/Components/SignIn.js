@@ -19,7 +19,7 @@ const SignIn = () => {
           password
         );
         console.log(userCredential);
-        Navigate("/", { state: { email: userCredential.user.email } });
+        Navigate("/Home", { state: { email: userCredential.user.email } });
       } catch (error) {
         setError(error.message);
       }
@@ -51,7 +51,7 @@ const SignIn = () => {
             required
           />
           <div className="btn-sgnIn">
-          <button type="submit" className="bts" onClick={() => Navigate("/Navbar")} >SignIn</button>
+          <button type="submit" className="bts"  >SignIn</button>
           <button onClick={() => Navigate("/AccountCreate")} className="bts">
           Create Account
         </button>

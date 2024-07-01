@@ -26,7 +26,7 @@ function App() {
       <Route path='/ViewOrder' element={<ViewOrder/>}></Route>
       
       
-      <Route path='/Navbar' element={<Navbar/>}></Route>
+      {/* <Route path='/Navbar' element={<Navbar/>}></Route> */}
       {/* <Route path='/Footer' element={<Footer/>}></Route> */}
 
       </Routes>
