@@ -25,7 +25,7 @@ function FirstPage(){
 <h1>M&N</h1>
 <h1>Food Zone</h1>
 <h3>Fresh and DELICIOUS fOOD</h3>
-<button className="fpg_btn" onClick={() => navigate("/SignIn")}>View Menu</button>
+<button className="fpg_btn" onClick={() => navigate("/SignIn")}><strong>VISIT</strong></button>
 </div>
 {/* <div className="ft"><Footer/></div> */}
 <Footer/>

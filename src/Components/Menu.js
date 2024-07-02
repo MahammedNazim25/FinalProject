@@ -209,87 +209,88 @@ import { useNavigate } from "react-router-dom";
 import './Auth.css'; // Assuming this styles the overall layout
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import "./Menu.css"
 
 const menuItems = [
   // Define your menu items here with properties like name, image path, etc.
   {
     name: "BBQ Chicken",
-    image: "/Users/mahammed/Desktop/restro/src/Components/bbqChicken",
+    image: "./Images/bbq chicken.webp",
     description: "Tender chicken marinated in BBQ sauce."
   },
   {
     name: "BBQ Fish",
-    image: "/Users/mahammed/Desktop/restro/src/Components/bbqFish",
+    image: "./Images/bbqFish.webp",
     description: "Crispy and tender fish fillet served with a rich and flavorful sauce."
   },
   {
     name: "Chana Masala",
-    image: "/Users/mahammed/Desktop/restro/src/Components/chana",
+    image: "./Images/chana.jpeg",
     description: "Aromatic and flavorful chana curry made with aromatic spices and vegetables."
   },
   {
     name: "Butter Chicken",
-    image: "/Users/mahammed/Desktop/restro/src/Components/ButterChicken",
+    image: "./Images//ButterChicken.jpeg",
     description: "Crispy and tender chicken cooked in a rich and creamy sauce."
   },
   {
     name: "Mix Vegetable",
-    image: "/Users/mahammed/Desktop/restro/src/Components/mixv",
+    image: "./Images/mixv.jpeg",
     description: "Aromatic and flavorful vegetable dish made with fresh and aromatic vegetables."
   },
   {
     name: "Palak Paneer",
-    image: "/Users/mahammed/Desktop/restro/src/Components/palak",
+    image: "./Images/palak.jpeg",
     description: "Crispy and flavorful paneer dish with a rich and creamy sauce."   
     },
   {
     name: "Veggie",
-    image: "/Users/mahammed/Desktop/restro/src/Components/veggie",
+    image: "./Images/mixveg.webp",
     description: "Aromatic and flavorful vegetable dish made with fresh and aromatic vegetables."
   },
   {
     name: "Noodles",
-    image: "/Users/mahammed/Desktop/restro/src/Components/noodles",
+    image: "./Images/noodles.jpeg",
     description: "Crispy and flavorful noodles dish with a rich and creamy sauce."
   },    
   {
     name: "Fried Rice",
-    image: "/Users/mahammed/Desktop/restro/src/Components/friedrice",
+    image: "./Images/friedrice.jpeg",
     description: "Crispy and flavorful rice dish with a rich and creamy sauce."
   },
   {
     name: "Plain Rice",
-    image: "/Users/mahammed/Desktop/restro/src/Components/rice",
+    image: "./Images/rice.webp",
     description: "Plain Rice made with best Quality."
   },
   {
     name: "Naan",
-    image: "/Users/mahammed/Desktop/restro/src/Components/naan",
+    image: "./Images/naan.jpeg",
     description: "Crispy and flavorful naan dish with a rich and creamy sauce."
   },
   {
     name: "Garlic Naan",
-    image: "/Users/mahammed/Desktop/restro/src/Components/garlicnaan",
+    image: "./Images/garlicnaan.jpeg",
     description: "Crispy and flavorful naan dish with a rich and creamy sauce."
   },
   {
     name: "Coke",
-    image: "/Users/mahammed/Desktop/restro/src/Components/coke",
+    image: "./Images/coke.jpeg",
     description: "Coke is a carbonated soft drink ."
   },
   {
     name: "Pepsi",
-    image: "/Users/mahammed/Desktop/restro/src/Components/pepsi",
+    image: "./Images/pepsi.jpeg",
     description: "pepsi is a carbonated soft drink ."
   },
   {
     name: "7up",
-    image: "/Users/mahammed/Desktop/restro/src/Components/7up",
+    image: "./Images/7up.webp",
     description: "7up is a carbonated soft drink ."
     },
     {
       name: "Canada Dry",
-      image: "/Users/mahammed/Desktop/restro/src/Components/cdry",
+      image: "./Images/cdry.webp",
       description: "Canada Dry is a carbonated soft drink ."
     }
 
@@ -298,7 +299,7 @@ const menuItems = [
 
 function Menu() {
   const navigate = useNavigate();
-  const [cart, setCart] = useState([]); // Array to store cart items and quantities
+  const [cart, setCart] = useState([]); 
 
   const addToCart = (item, quantity) => {
     setCart((prevCart) => [...prevCart, { item, quantity }]);
