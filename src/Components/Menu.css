@@ -1,0 +1,53 @@
+.menu-items{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item{
+    text-align: center;
+    width: 230px;
+    border: 2px solid rgb(244, 172, 5);
+    padding: 22px;
+    border-radius: 10px;
+
+}
+
+
+
+.menu{
+text-align: center;
+padding: 20px;
+background-color: rgba(255, 202, 127, 0.567);
+}
+.menu-item img{
+    height: 200px;
+    border-radius: 10px;
+    width: 102%;
+}
+.menu-item h3{
+    font-size: 18px;
+    margin: 10px 0; 
+    color: rgb(7, 7, 109);
+}
+
+.menu-item p{
+    color: black;
+    font-weight: bold;
+}
+
+.menu-item input{
+    width: 50px;
+    margin: 10px 0;
+}
+
+.menu-items button{
+    cursor: pointer;
+    color: white;
+    background-color: green;
+}
+.menu-item button{
+    height: 30px;
+    
+}
