@@ -3,11 +3,12 @@
     gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 15px;
 }
 
 .menu-item{
     text-align: center;
-    width: 230px;
+    width: 260px;
     border: 2px solid rgb(244, 172, 5);
     padding: 22px;
     border-radius: 10px;
@@ -18,7 +19,6 @@
 
 .menu{
 text-align: center;
-padding: 20px;
 background-color: rgba(255, 202, 127, 0.567);
 }
 .menu-item img{
@@ -42,12 +42,30 @@ background-color: rgba(255, 202, 127, 0.567);
     margin: 10px 0;
 }
 
-.menu-items button{
-    cursor: pointer;
+.view-order-btn{
+    height: 60px;
+    margin: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgba(242, 239, 239, 0.992);
+    background-color:rgb(7, 179, 10) ;
+    border-radius: 10px;
+}
+
+.add_btn{
+    height: 42px;
+    background-color:rgb(218, 109, 6);
     color: white;
-    background-color: green;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+
 }
-.menu-item button{
-    height: 30px;
-    
+
+
+
+.menu footer{
+    margin-top: 50px;
+    padding: -10px;
 }
+

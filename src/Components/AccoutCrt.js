@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "./Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import './Auth.css';
+import Footer from "./Footer";
 
 
 const AccountCreate = ()=> {
@@ -47,6 +48,7 @@ return(
         {error &&  <p className="error">{error}</p>}
         
         </div></main>
+        <Footer/>
         </div>
 )
 }

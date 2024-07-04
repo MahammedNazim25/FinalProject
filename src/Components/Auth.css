@@ -100,12 +100,12 @@ cursor: pointer;
 }
 /*Home.css*/
 .about-us {
-    background-image: url(imgNav.png);
+    background-image: url(bg4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
     width: 100%;
-    height: 115vh;
+    height: 980px;
     text-align: center;
 justify-content: space-between;
 flex-direction: column;
