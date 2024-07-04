@@ -1,0 +1,65 @@
+.manage-website {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  
+  .manage-website-content {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(78, 65, 227, 0.241);
+    border-radius: 8px;
+  }
+  
+  .manage-website-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #021F54;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  .save-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #021F54;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .save-btn:hover {
+    background-color: #001C55;
+  }
+  
+  .manage-website footer{
+    margin-top: -0;
+  }
