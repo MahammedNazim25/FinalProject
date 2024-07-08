@@ -1,67 +1,84 @@
-import { useState , React } from "react"; // React from "react";
-import { useNavigate } from "react-router-dom";
-import './Auth.css';
-import Menu from "./Menu";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate, navigate } from "react-router-dom";
+import { ref, get, push,remove } from "firebase/database";
+import { database } from './Firebase';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import './ViewOrder.css';
 
-// const ViewOrder =() => {
-//   return (
-//     <div className="about-us">
-//       <Navbar />
-//       <h2 className="abt">This is our ViewOrder page</h2>
-//       <p className="abt">
-//         order data <br/>
-//         Notification <br/>
-//         fgdr<br/>
-//         gfhfgh
-//       </p>
-//       <Footer/>
-//     </div>
-//   );
-// }
+function ViewOrder() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const cart = location.state?.cart || []; 
 
-// export default ViewOrder;
+  const goToHomePage = () => {
+    navigate('/Payment');
+  };
 
-function ViewOrder({ cart, updateCart, removeFromCart }) {
-  const [quantity, setQuantity] = useState(1); // For editing quantity
+  const [orderItems, setOrderItems] = useState([]);
 
-  const handleQuantityChange = (event, item) => {
-    const newQuantity = parseInt(event.target.value);
-    if (newQuantity > 0) {
-      updateCart(item, newQuantity); // Update cart with new quantity for the item
-      setQuantity(newQuantity); // Update local quantity state
+  useEffect(() => {
+    if (cart.length === 0) {
+      return;
     }
-  };
 
-  const handleRemoveItem = (item) => {
-    removeFromCart(item); // Remove item from cart
-  };
+    const fetchOrderItems = async () => {
+      try {
+        const itemsRef = ref(database, "Menu");
+        const snapshot = await get(itemsRef);
+        if (snapshot.exists()) {
+          const items = snapshot.val();
+          const fetchedOrderItems = cart.map(cartItem => ({
+            ...items[cartItem.key],
+            quantity: cartItem.quantity
+          }));
+          setOrderItems(fetchedOrderItems);
 
+          const orderRef = ref(database, "Orders");
+          await push(orderRef, { orderItems: fetchedOrderItems });
+        } else {
+          setOrderItems([]);
+        }
+      } catch (error) {
+        console.error("There is an error! ", error);
+      }
+    };
+
+    fetchOrderItems();
+  }, [cart, navigate]);
+
+  const handleRemove =async (index) =>{
+    try{
+      const RemoveItem =  orderItems[index];
+      const itemsRef = ref(database, "Orders");
+      await remove(itemsRef, index);
+      const updatedOrderItems = orderItems.filter((item, i) => i !== index);
+      setOrderItems(updatedOrderItems);
+    } catch (error) {
+      console.error("Error removing item: ", error);
+    }
+  }
   return (
-    <div className="view-order">
+    <div className="view">
+      <Navbar />
       <h1>Your Order</h1>
-      {cart.length === 0 ? (
-        <p>Your cart is currently empty.</p>
-      ) : (
-        <ul>
-          {cart.map((item, index) => (
-            <li key={index}>
-              {item.item} x
-              <input
-                type="number"
-                min="1"
-                value={quantity} // Use local quantity state for editing
-                onChange={(event) => handleQuantityChange(event, item)}
-              />
-              <button onClick={() => handleRemoveItem(item)}>Remove</button>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Add buttons or functionality for checkout, editing quantities, etc. */}
-      <button disabled={cart.length === 0}>Checkout</button> {/* Disable if cart is empty */}
+      <div className="select">
+        {orderItems.length > 0 ? (
+          orderItems.map((orderItem, index) => (
+            <div key={index} className="itemselect">
+              <h3 className="policyhead">{orderItem.name}</h3>
+              <p>Description: {orderItem.description}</p>
+              <p>Price: ${orderItem.price}</p>
+              <p>Quantity: {orderItem.quantity}</p>
+              <button onClick={() => handleRemove(index)} className="bts">Remove</button>
+            </div>
+          ))
+        ) : (
+          <p>Your cart is empty.</p>
+        )}
+      </div>
+      <button className="bts" id="pay" onClick={goToHomePage}>Make Payment </button>
+      <Footer />
     </div>
   );
 }

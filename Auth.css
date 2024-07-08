@@ -1,0 +1,348 @@
+
+
+body{
+    margin: 0;
+  padding: 0;
+}
+.first{
+    background-image: url(img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    width: 100%;
+    height: 115vh;
+    text-align: center;
+justify-content: space-between;
+flex-direction: column;
+display: flex;
+}
+
+.forgotbtn{
+    background:none;
+    color: rgb(1, 1, 26);
+    padding: 10px;
+    margin-top: -10px;
+    border: none;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+    
+    }
+
+.first Footer{
+    margin-top: 5px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    margin: 20px 30px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+li{
+    color: rgb(234, 233, 225);
+    margin-left: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.firstpg{
+    text-align: center;
+    border: 1px solid yellow;
+    width: 90%;
+    max-width: 550px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color:#3d051b48 ;
+    height: 270px;
+    margin-top: 150px;
+ 
+}
+
+h1{
+    color:#021F54;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+h3{
+    color: #f5ea26;
+}
+
+.fpg_btn{
+    background-color: #001C55;
+    color:  white;
+    border-radius: 9px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+}
+
+footer{
+    height: 170px;
+    background-color: #021F54;
+}
+
+#imglogo{
+    background-image: url(Mnlogo.png);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    padding: 10px;
+
+}
+.footer {
+    /* margin-top: -80px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+
+    }
+
+    a{
+color: white;   
+text-decoration: none;
+cursor: pointer;
+}
+/*Home.css*/
+.about-us {
+    background-image: url(bg4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    width: 100%;
+    height: 980px;
+    text-align: center;
+justify-content: space-between;
+flex-direction: column;
+display: flex;
+
+}
+.about-us_2{
+    background-image: url(https://www.tastingtable.com/img/gallery/dans-le-noir-the-curious-restaurant-that-leaves-diners-in-the-dark/intro-1677411079.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    width: 100%;
+    height: 980px;
+    text-align: center;
+justify-content: space-between;
+flex-direction: column;
+display: flex;
+}
+.abt{
+    margin-bottom: -110px;
+    font-weight: bolder;
+        color: rgb(248, 244, 244);
+        width: 850px;
+    margin-left: 200px;
+    font-style: italic;
+    text-decoration:underline;
+}
+
+.about-us_2 footer{
+    margin-top: 0;
+}
+
+ .menu{
+    margin-top: 80px;
+font-weight: bolder;
+    color: rgb(248, 244, 244);
+}
+
+.abt1{
+    width: 850px;
+    color: white;
+    margin-left: 250px;
+    font-style: italic;
+}
+
+/* css signin */
+/* #ath{
+    text-align: center;
+    border: 1px solid yellow;
+    width: 550px;
+    flex-direction: column;
+    margin-left: 25%;
+    background-color:#3d051b48 ;
+    height: 300px;
+    margin-bottom: 100px;
+} */
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+}
+
+.sl{
+    background-color: green;
+    margin-top: -1px;
+padding: 8px; 
+   height: 35px;
+   color: white;
+}
+
+input{
+    width: 380px;
+    height: 40px;
+    padding-left: 8px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color:rgba(255, 255, 255, 0.63) ;
+    font-weight: bold;
+    font-size: medium;
+
+}
+.btn-sgnIn{
+    float: left;
+
+}
+.bts{
+background-color:  #001C55;
+color:  white;
+border-radius: 9px;
+height: 40px;
+width: 150px;
+cursor: pointer;
+margin: 25px;
+}
+
+
+
+/*Aboutus css*/
+
+
+
+.welcome{color:  black;}
+
+/* help page css */
+
+.helpcont {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d7cbcb3f;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    height: auto;
+}
+
+.helpcont h1 {
+    margin-bottom: 20px;
+}
+
+.helpcont section {
+    margin-bottom: 20px;
+}
+
+.helpcont section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.helpcont section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.helpform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formdata {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.formdata label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formdata input,
+.formdata textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+.formdata textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.help footer,
+.about footer, .Policydt footer{
+    margin-top: 0;
+}
+
+
+.about{
+    background-color: #d7cbcb3f;
+}
+.abtpg, .Policy{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d7cbcb3f;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    height: auto;
+}
+
+/* policy css*/
+.policyhead{
+    color: black;
+    text-align: left;
+
+}
+
+.Payment{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #25ca6a1e;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    border: none;
+    height: auto;
+}
+
+
+.label{
+    font-weight: bolder;
+}
+
+.bts pay{
+    text-align: center;
+}
+
+.Payment footer{
+    margin-top: 0;
+}
