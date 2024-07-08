@@ -1,43 +1,42 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 
-export const MenuContext = createContext();
+const generateRows = (MenuItems, onDelete, onEdit) => {
+  const rows = [];
+  for (let id in MenuItems) {
+    rows.push(
+      <tr key={id}>
+        <td>{MenuItems[id].name}</td>
+        <td id='links'>{MenuItems[id].image}</td>
+        <td>{MenuItems[id].description}</td>
+        <td>{MenuItems[id].price}</td>
+        <td>
+          <button className="edit" onClick={() => onEdit(id)}>Edit</button>
+          <button className="delete" onClick={() => onDelete(id)}>Delete</button>
+        </td>
+      </tr>
+    );
+  }
+  return rows;
+};
 
-const initialMenuItems = [
-  {
-    name: 'BBQ Chicken',
-    image: './Images/bbq chicken.webp',
-    description: 'Tender chicken marinated in BBQ sauce.',
-    price: 10,
-  },
-  {
-    name: 'BBQ Fish',
-    image: './Images/bbqFish.webp',
-    description: 'Crispy and tender fish fillet served with a rich and flavorful sauce.',
-    price: 12,
-  },
-  // ... other items
-];
-
-export const MenuProvider = ({ children }) => {
-  const [menuItems, setMenuItems] = useState(initialMenuItems);
-
-  const addItem = (item) => {
-    setMenuItems([...menuItems, item]);
-  };
-
-  const editItem = (index, newItem) => {
-    const newMenuItems = [...menuItems];
-    newMenuItems[index] = newItem;
-    setMenuItems(newMenuItems);
-  };
-
-  const removeItem = (index) => {
-    setMenuItems(menuItems.filter((_, i) => i !== index));
-  };
-
+const MenuList = ({ MenuItems, onDelete, onEdit }) => {
   return (
-    <MenuContext.Provider value={{ menuItems, addItem, editItem, removeItem }}>
-      {children}
-    </MenuContext.Provider>
+    <div>
+      <h1>Menu Items List</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th >Image Link</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>{generateRows(MenuItems, onDelete, onEdit)}</tbody>
+      </table>
+    </div>
   );
 };
+
+export default MenuList;

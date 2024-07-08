@@ -1,0 +1,43 @@
+.view {
+    padding: 20px;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 255, 0.167);
+   
+  }
+  
+  .select {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .itemselect {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .itemselect h3 {
+    margin-bottom: 10px;
+  }
+  
+  .itemselect img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  #pay{
+    margin-left: 45%;
+    text-align: center;
+    background-color: green;
+    border: none;
+  }
+
+  #pay:hover{
+    background-color: rgb(12, 153, 12);
+
+  }
+  
+  .view footer{
+    margin-top: 0;
+    
+  }

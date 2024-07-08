@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+
 const AboutUs =() => {
   return (
-    <div className="about-us">
+    <div className="about-us_2">
       <Navbar />
       <h2 className="abt">About Us</h2>
-      <p className="abt">
+      <p className="abt1">
         Welcome to your About Us page!
         We are M&N.
         We are a family-owned business located in Canada that specializes in providing high-quality food.
@@ -16,7 +17,7 @@ const AboutUs =() => {
         Our team of experts is comprised of experienced professionals who are passionate about what they do and are dedicated to helping our customers achieve their goals.
         We are committed to providing our customers with the best possible experience and are always looking for ways to improve our services.
         If you have any questions or feedback, please don't hesitate to contact us.
-        We look forward to working with you!
+        We look forward to working with you!<br/> <br/>
         Thank you for choosing M&N.
       </p>
       <Footer/>

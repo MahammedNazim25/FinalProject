@@ -1,96 +1,80 @@
-import React, { useContext, useState } from 'react';
-import { MenuContext } from './MenuContext';
+import React, { useEffect, useState } from 'react';
+import MenuList from './MenuContext';
+import Navbar from './Navbar';
+import './AdminPanel.css'
 
-const AdminPanel = () => {
-  const { menuItems, addItem, editItem, removeItem } = useContext(MenuContext);
-  const [newItem, setNewItem] = useState({
+
+const AdminPanel = ({ addOrEditStudent, currentId, MenuItems, onEdit, onDelete }) => {
+  const initilizedItems = {
     name: '',
     image: '',
     description: '',
-    price: 0,
-  });
+    price: ''
+  }
 
-  const handleChange = (e) => {
-    setNewItem({ ...newItem, [e.target.name]: e.target.value });
+  const [values, setValues] = useState(initilizedItems);
+
+  useEffect(() => {
+    if (currentId === "" || !MenuItems[currentId]) {
+      setValues(initilizedItems);
+    } else {
+      setValues(MenuItems[currentId]);
+    }
+  }, [currentId, MenuItems]);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setValues({
+      ...values,
+      [name]: value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem(newItem);
-    setNewItem({ name: '', image: '', description: '', price: 0 });
-  };
+    addOrEditStudent(values);
+    setValues(initilizedItems);
+  }
 
   return (
-    <div>
+    <div className="admin-panel">
+       <Navbar/>
       <h2>Admin Panel</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          value={newItem.name}
+          value={values.name}
           onChange={handleChange}
-          placeholder="Name"
+          placeholder="Name" required
         />
         <input
           type="text"
-          name="image"
-          value={newItem.image}
+          name="image" 
+          id='image'
+          value={values.image}
           onChange={handleChange}
           placeholder="Image URL"
         />
         <input
           type="text"
           name="description"
-          value={newItem.description}
+          value={values.description}
           onChange={handleChange}
-          placeholder="Description"
+          placeholder="Description" required
         />
         <input
           type="number"
           name="price"
-          value={newItem.price}
+          value={values.price}
           onChange={handleChange}
-          placeholder="Price"
+          placeholder="Price" required
         />
-        <button type="submit">Add Item</button>
+        <button className='btn_add' type="submit">Add Item</button>
       </form>
-
-      <h3>Edit Items</h3>
-      {menuItems.map((item, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            value={item.name}
-            onChange={(e) =>
-              editItem(index, { ...item, name: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={item.image}
-            onChange={(e) =>
-              editItem(index, { ...item, image: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={item.description}
-            onChange={(e) =>
-              editItem(index, { ...item, description: e.target.value })
-            }
-          />
-          <input
-            type="number"
-            value={item.price}
-            onChange={(e) =>
-              editItem(index, { ...item, price: parseFloat(e.target.value) })
-            }
-          />
-          <button onClick={() => removeItem(index)}>Remove</button>
-        </div>
-      ))}
+      <MenuList MenuItems={MenuItems} onEdit={onEdit} onDelete={onDelete} />
     </div>
   );
-};
+}
 
 export default AdminPanel;

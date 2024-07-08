@@ -1,12 +1,14 @@
 .admin-panel {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
+    background-color: rgb(255, 212, 127);
   }
   
   .admin-panel h2,
   .admin-panel h3 {
     margin-bottom: 10px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: xx-large;
+    color: #051791;
   }
   
   .admin-panel form {
@@ -20,13 +22,16 @@
     margin-bottom: 10px;
     padding: 5px;
     font-size: 1em;
+    
   }
+  
   
   .admin-panel form button {
     padding: 10px;
     font-size: 1em;
   }
   
+
   .existing-items ul {
     list-style-type: none;
     padding: 0;
@@ -41,4 +46,63 @@
   .existing-items button {
     margin-left: 10px;
   }
+   .btn_add{
+    background-color: #0811c0;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+   }
+
+   .edit, .delete{
+    width: 80px ;
+    padding: 5px;
+    color: white;
+    border: none;
+    font-size: larger;
+     }
+
+   .delete{
+    background-color: rgb(244, 49, 49);
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+       }
+       .edit{
+        background-color: rgba(253, 167, 29, 0.873);
+        color: white;
+        border: none;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+           }
+
+   
+           #links{
+            width:30px ;
+           }
+   @media (min-width: 900px) {
+    .admin-panel {
+      padding: 40px;
+    }
+  
+    .admin-panel h2,
+    .admin-panel h3 {
+      font-size: xx-large;
+    }
+  
+    .admin-panel form input,
+    .admin-panel form textarea {
+      font-size: 1.4em;
+    }
+  
+    .admin-panel form button {
+      font-size: 1.4em;
+    }
+  
+    .existing-items li {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      
+    }
+  }
+
   

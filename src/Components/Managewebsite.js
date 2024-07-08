@@ -10,7 +10,6 @@ const ManageWebsite = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    // Implement save functionality here
     console.log('Website Name:', websiteName);
     console.log('Phone Number:', phoneNumber);
     console.log('Email Address:', emailAddress);
@@ -20,7 +19,7 @@ const ManageWebsite = () => {
   return (
     <div className="manage-website">
       <Navbar />
-      <div className="manage-website-content">
+      <div className="set_cont">
         <h2>Manage Website</h2>
         <form onSubmit={handleSave}>
           <div className="form-group">

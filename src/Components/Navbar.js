@@ -13,7 +13,7 @@ const Navbar = () => {
   const handleSignout = async () => {
     try {
         await signOut(auth);
-        navigate("./SignIn")
+        navigate("/SignIn")
     } catch (error) {
         console.log(error);
     }
@@ -30,7 +30,6 @@ const Navbar = () => {
         <li className="dropdown"><Link to="/Home" onMouseEnter={handleDropmenu} onMouseLeave={handleDropmenu}>Home</Link>
         {DropmenuView &&(
           <ul className="dropdown-menu" onMouseEnter={() => setDropmenuiew(true)} onMouseLeave={() => setDropmenuiew(false)}>
-            <li><div className="Admin"><strong id="adm">Admin</strong></div></li>
             <li><Link to="/Admin">Admin Panel</Link></li>
             <li><Link to="/ManageWebsite">Manage Website</Link></li>
             
@@ -42,7 +41,6 @@ const Navbar = () => {
         <li><Link to="/ViewOrder">View Orders</Link></li>
         <li><Link onClick={handleSignout}>LogOut</Link></li>
       </ul>
-      {/* <Footer /> */}
     </div>
   );
 };

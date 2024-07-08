@@ -6,13 +6,13 @@ function Footer(){
         <div className="footer">
             <div id="imglogo"></div>
             <div className="fd1">
-           <p><strong>Contact Us:</strong> <br/><br/>www.M&Nfoodzone.com <br/>m&nfoodzone@gmail.ca </p> 
+           <p><strong>Contact Us:</strong> <br/><br/>www.M&Nfoodzone.com <br/>m&nfoodzone@gmail.ca<br/>+438 258 4589 </p> 
            </div>
            <div className="fd1">
            <p><br/><strong>Follow Us:</strong> <br/><br/><a href="https://www.google.com/">Google</a><br/><a href="https://www.facebook.com/">Facebook</a><br/><a href="https://www.instagram.com/">Instagram</a> </p> 
            </div>
            <div className="fd1">
-           <p><strong>Contact Us:</strong> <br/>www.M&Nfoodzone.com <br/>m&nfoodzone@gmail.ca </p> 
+           <p><strong>Know more:</strong> <br/>Privacy Policy  <br/>Terms Conditions <br/> Guidelines</p> 
            </div>
            
         </div>
