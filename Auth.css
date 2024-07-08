@@ -219,16 +219,14 @@ cursor: pointer;
 margin: 25px;
 }
 
+.bts:hover{
+    background-color: #021F54;
+}
 
-
-/*Aboutus css*/
-
-
-
+.bts:active{
+    background-color: #021F54;
+}
 .welcome{color:  black;}
-
-/* help page css */
-
 .helpcont {
     max-width: 800px;
     width: 100%;
@@ -315,23 +313,29 @@ margin: 25px;
     height: auto;
 }
 
-/* policy css*/
+.abtpg h1, .Policy h1{
+    margin-bottom: 20px;
+}
 .policyhead{
     color: black;
     text-align: left;
 
 }
 
-.Payment{
+.checkdt{
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding-top: 80px;
     background-color: #25ca6a1e;
     border: 1px solid #ddd;
     border-radius: 8px;
     border: none;
     height: auto;
+}
+
+.Payment footer{
+    margin-top: 0;
 }
 
 
@@ -341,8 +345,4 @@ margin: 25px;
 
 .bts pay{
     text-align: center;
-}
-
-.Payment footer{
-    margin-top: 0;
 }
